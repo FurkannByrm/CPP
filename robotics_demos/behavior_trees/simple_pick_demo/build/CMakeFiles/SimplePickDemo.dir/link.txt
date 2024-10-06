@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/SimplePickDemo.dir/src/bt_demo.cpp.o -o SimplePickDemo  -lbehaviortree_cpp_v3 

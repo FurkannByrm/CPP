@@ -1,3 +1,0 @@
-/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/build/CMakeFiles/SimplePickDemo.dir
-/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/build/CMakeFiles/edit_cache.dir
-/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/build/CMakeFiles/rebuild_cache.dir
