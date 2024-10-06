@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/build",
+  "command": "/usr/bin/c++  -I/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/include  -o CMakeFiles/SimplePickDemo.dir/src/bt_demo.cpp.o -c /home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/src/bt_demo.cpp",
+  "file": "/home/cengo/CPP/robotics_demos/behavior_trees/simple_pick_demo/src/bt_demo.cpp",
+  "output": "CMakeFiles/SimplePickDemo.dir/src/bt_demo.cpp.o"
+}
+]
