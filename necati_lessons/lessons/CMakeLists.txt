@@ -11,13 +11,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Kaynak dosyaları listele
-set(SOURCES
-    src/main.cpp
-    src/10_14_lessons.cpp
-)
+#set(SOURCES
+#    src/main.cpp
+#    src/special_member_func.cpp
+#)
 
-# Çalıştırılabilir dosya oluştur (10_14 adında)
-add_executable(10_14 ${SOURCES})
+
+add_executable(copy_ctor src/special_member_functions/copy_ctor.cpp)
+
+add_executable(default_ctor src/special_member_functions/default_ctor.cpp)
+
+add_executable(static src/static_member_functions/static.cpp)
+add_executable(14 src/14.cpp)
+
+
 
 # Eğer ileride kütüphaneler linklemen gerekirse:
 # target_link_libraries(10_14 <kütüphane_ismi>)
