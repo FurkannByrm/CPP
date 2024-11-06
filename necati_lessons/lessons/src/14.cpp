@@ -368,7 +368,7 @@ int main(){
 //bir sınıf türünden nesne pointer interface e sahip bir smart pointer oluşturalım
 //std::unique_ptr<Point>p(new Point(1,4,7));
 //std::cout<<"main devam ediyor"<<std::endl;
-//burada p nesnesinin hayatı bitti, fakat p nin destrructoru öyle şekilde yazılmış ki
+//burada p nesnesinin hayatı bitti, fakat p nin destructoru öyle şekilde yazılmış ki
 //p nin destructor ı ctor ile edindiği dinamik ömürlü nesnesnin hayatını bitirdi.
 //örneğin kod bu haliyle şu çıktıyı verdi :
 //operator new called n : 12
@@ -433,7 +433,7 @@ sahibinin hayatı bittiğinde o nesnenin o kaynağın da hayatı bitiyor.
  mesela burada dinamik ömürlü bir nesne bir kaynak var onu unique_ptr nesnesine bağladım, emin olduğum şey ne zaman p nin hayatı
  bitecek, p nin hayatı bittiğinde dinamik ömürlü nesnenin de hayatı bitecek. yani artık dinamik ömmürlü nesnenin hayatını neye endeklsedim
  burada p değişkenine.
- peki bunu bir başka nesneye kopyalarsam ? işte unique_ptr sınıfınınen önemli özelliği de kopyalamaya kapatılmış olmasıdır.
+ peki bunu bir başka nesneye kopyalarsam ? işte unique_ptr sınıfının en önemli özelliği de kopyalamaya kapatılmış olmasıdır.
 böylece aynı nesneyi birden fazla ptr nin göstermesi, aynı dinamik ömürlü nesneye birden fazla ptr ile erişme olanağı kalmıyor.
 bunu sağlayan unique_ptr sınıfını kopyalamaya karşı kapatılmış bir sınıf olmasıdır. bu ne demek ? copy ctor ve copy assigment ı delete edilmiştir.
 delete edilmemiş olsaydı
@@ -444,13 +444,13 @@ taşıdığımızda ne oluyor ?
 biri mülkiyeti bırakıyor.
 
 std::unique_ptr<Point>p(new Point(1,4,7));
-auto p1 = move(p); //sağ traraf değeri haline getirdik, böylece artık p nin kaynağını p1 aldı.
+auto p1 = move(p); //sağ taraf değeri haline getirdik, böylece artık p nin kaynağını p1 aldı.
 
 1 Ornek
  bir sınıf olsun, bu sınıfınveri elemanlarında biri kopyalamaya karşı kapatılmış olsun.
  buna en iyi örnek unique_ptr.
 
-Myclass{
+class Myclass{
 
     public:
 
@@ -478,7 +478,7 @@ int main(){
 
     Myclass m3 = move(m2);//syntax hatası yok cunku derleyici move member ı yazdı cunku derleyicinin yazdığı move aslında hayata gelen nesnenin
     //uptr ogesine diğer nesnenin yani m2 nesnesini uptr sine taşıyor
-    //aynı şey atama iöin degecerli
+    //aynı şey atama için degecerli
     m1 = m2 //syntax hatası çunkü bu delete edilmiş bir fonksiyon
     m1 = std::move(nm)// taşıma semantiği devreye girecek.
     //rule of zero zaten beim istediğim bir şey sınıf aboyle bir veri elemanı koyuyorsak:
