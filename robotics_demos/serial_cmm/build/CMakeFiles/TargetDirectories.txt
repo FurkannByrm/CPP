@@ -1,4 +1,0 @@
-/home/cengo/CPP/robotics_demos/serial_cmm/build/CMakeFiles/serial_read.dir
-/home/cengo/CPP/robotics_demos/serial_cmm/build/CMakeFiles/serial_write.dir
-/home/cengo/CPP/robotics_demos/serial_cmm/build/CMakeFiles/edit_cache.dir
-/home/cengo/CPP/robotics_demos/serial_cmm/build/CMakeFiles/rebuild_cache.dir

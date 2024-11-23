@@ -5,7 +5,13 @@ project(SerialPortRead)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(serial_read src/serial_read.cpp)
-add_executable(serial_write src/serial_write.cpp)
 
-target_link_libraries(serial_read PRIVATE pthread)
+
+set(SOURCES
+    src/main.cpp
+    src/daly-bms-uart.cpp
+)
+
+# Çalıştırılabilir dosya oluştur (10_14 adında)
+add_executable(bms ${SOURCES})
+include_directories(${CMAKE_SOURCE_DIR}/include)

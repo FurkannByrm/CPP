@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/serial_read.dir/src/serial_read.cpp.o -o serial_read  -lpthread 

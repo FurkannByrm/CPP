@@ -1,4 +1,4 @@
-#include <iostream>
+#include "default_ctor.hpp"
 
 /*
 class Ctor{
@@ -16,35 +16,29 @@ class Ctor{
    istediğinizde bu kullanışlıdır. ctor define edilmezse compiler a bırakılır.
 */
 
+CreateObject::CreateObject(const std::string& serialDev)
+{
+     std::cout<<" Error "<<errno<<" from open: "<<serialDev.c_str()<<std::endl;
 
-class Ctor{
-  public:
+}
 
-  Ctor() : x(0) {
-         std::cout << "Default constructor called" << std::endl;
-     }
-  explicit Ctor(int x){
-      std::cout<<"parametreli ctor cagrıldı: "<<std::endl;
-  }
-  void func(Ctor x);
+DefaultCtor::DefaultCtor(int param) : deneme{5}, object("/ttyUSB1")//priority is in the initializer list
+{
 
-  ~Ctor()
-  {
-      std::cout<<"destructor cagrıldı : "<<this<<std::endl;
-  }
+  std::cout<<"default constructor cagrildi"<<std::endl;
 
-  private:
-  int x;
+}
 
-};
 
 
 int main()
 {
-    double m;
-    Ctor m1;
-   // m1.func(m); //ERROR : clang: No viable conversion from 'double' to 'Ctor'
-   Ctor m2(3);
+
+    DefaultCtor creator{4};//creator(4), creator = 4 maybe 
+  //   double m;
+  //   Ctor m1;
+  //  // m1.func(m); //ERROR : clang: No viable conversion from 'double' to 'Ctor'
+  //  Ctor m2(3);
 
     return  0;
 }
