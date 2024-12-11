@@ -10,15 +10,16 @@ class Stack{
 
     public:
 
-    inline static constexpr int MAX = 222;
+    inline static constexpr int MAX = 22222;
     int a[MAX];
-    int top;
-    Stack(int m);
+    Stack();
     bool push( int x );
     int pop();
     int peek();
     bool isEmpty();
-    private:
-   
 
+    private:
+    int top;
 };
+
+

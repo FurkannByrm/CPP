@@ -204,17 +204,131 @@ public:
     }
 };
 
+// sinifa operator fonksiyonu koup koymamakta client code daki intuitive sezgisel bir mekanma olmasi lazim
+
 int main() {
     MyClass a(10), b(20);
     a += b; // operator+= çağrısı
     std::cout << a << std::endl; // operator<< çağrısı
 }
 
-/*
+/* 
 Sonuç
 
 Operator overloading, C++’da güçlü ve esnek bir özelliktir. 
 Mantığını anlamak, kodun daha sezgisel ve temiz olmasını sağlar. 
 Ancak, iyi tasarlanmış bir API ve sınıf yapısı oluşturmak için dikkatli kullanılmalıdır.
+
+kullananin kafasini karistiracak operator overloading den uzak durmaliyiz
+sinif nesnesini degistirmeyecek uye fonksiyonlarin const olmasi lazim
+
+binary bir operatorun operantlarini degistirmemsi soz konusuysa global operator fonksiyonlari bunlari ref semantigi ile geciyorsaniz
+const ref olacak
+
+fonksiyon geri donus degeri turu operatorle olusturulan ifadenin value category sine uygun olusturulacak
+l value expression olusturan operator ifadelerine karsilik gelen fonskiton cagrilarina referans donsurecek
+pr value da ifadelere karsilik gelen fonsksiyon cagri ifadesinin l value expression olmasi icin geri donus degerleri referans olacak
+
+
+Simetrik Operatorler
+
+a op b 
+b op a anlamli ve ayni isi takip ediyor.
+
+
+s1< s2 ne anlama geliyorsa
+s2 < s1 de ayni anlama geliyor
+
+date - n tarihten tamsayi cikarilmasi
+n - date simetrik olmaz
+sinif nesnesini degistirmeyecek simetrik binary operatorler global operator olarak yazilmali
+ 
+//FRIEND DECLERATION
+
+//sinifa ait olmayan bir kod sinifin bir fonksiyonu olmayan bir fonksiyon sizin sinifinizin private bolumunuze eriusmesi durumunda syntax
+// hatassi olmasin istiyorsunuz. bu bildirime friend bildirimi deriz
+// eger uygun dogru syntax da bildirim yapilirsa syntax hatasi olarak degerlendirilmez
+//special member fubction kategorisinde de olabilir
+//friend lik verilen class kendi private memberlarina erisim vermis olmaz.    
+// 3 ayri kategoride kullanilir ve ayni aronda kullanilmaz
+
+// 1.kategori = global bir fonksiyona arkadaslik vermek
+// derleyiciye bu global fonksiyon benim frien im buna erisim verdigimdesyntax hatasi olarak gorme.
+
+// 2.kategori= bir sinifin uye fonksiyonuna arkadaslik vermek
+
+// 3.kategori = bir sinifa arkadaslik vermek.
+
+// bir sinif kendi fonksiyonuna friend veremez cumku zaten erisim soz konusudur.
+
+
+//kategori 2: bir sinifin uye fonksiyonunu friend etmek
+
+class Fruko{ //class Fruko; ile incoplete decleration da mumkun degildir
+
+    public:
+
+    void foo();// fruko sinifin public bolumune erismesini istiyoruz 
+
+    private:
+
+};
+
+//friend konusu icin ornek yapalim;
+// kategori 1: global fonksiyonu frien etmek
+
+class Myclass{
+    private:
+    int mx;
+    void pfunc();
+    friend void gfoo(int);
+    //fonksiyonun bildirimini derleyici aramiyor.
+    // bu nedenle bu zamana kadar gfoo() hic yazilmamis 
+    // bile olsa namelook up la aranmadigini bilmeliyiz. 
+    // yani bu ayni zamnada global bir fonksiyonun da bildirimi. 
+    //compiler bunun global fonksiyon oldugunu nerden biliyor cunku memeber functionu na 
+    //friend lik veremeyiz
+    //global fonksiyonu class definition icinde tanimlayamaz ama istisnasi friend fonksiyonlardir
+
+    public:
+    
+    friend bool operator<(Myclass m1, Myclass m2){ // kucuktur operatoru binary bi operator
+    //sinifin uye fonksiyonu olarak tanimlanacaksa 1 parametre almasi lazimdi
+    //ama biz cok parametre girerek global tanimlama yaptik.
+    // friend vermezsek define edemeyiz cunku class scope da global fonksiyonlar define edilmezler
+    return m1.mx < m2.mx;
+    //inline fonksiyon olmus oldu.
+    }
+    int getx()const{
+        return mx;
+    }
+    friend void Fruko::foo();
+    friend class Fruko;//bir sinifa komple friend de verilebilir.(forward decleration)
+    //artik fruko sinifinin butun member functionlari Myclass private bolumune erisebilir
+    //bu durumda compiler in class Fruko nun bildirimine veya tanimina ihtiyaci yok
+    //yani Class fruko silinse dahi error olusmaz
+
+};
+
+void gfoo(int x)// ayni sekilde parametesi de Myclass sinifi turunden olabilr
+{
+    ++x;
+    ///
+    Myclass m; 
+    m.pfunc();// access bu sekilde mumkun oldu
+}
+// friend bildiriminin sinifin public bolumuyle private bolumuarasinda yapilmasinin ne farki var ?
+//sorun cevabi hicbir fark yok. yegane farksiz bir durum cok sukur
+
+void Fruko::foo(){//compiler friend verdigi uye fonksiyonun sinifini gormesi lazim.
+
+    Myclass m;
+    m.pfunc();
+}
+
+int main(){
+
+}
+
 
 */

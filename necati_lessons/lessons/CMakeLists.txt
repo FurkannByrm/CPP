@@ -17,14 +17,6 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 #)
 
 
-add_executable(copy_ctor src/special_member_functions/copy_ctor.cpp)
-
-add_executable(default_ctor src/special_member_functions/default_ctor.cpp)
-
-add_executable(static src/static_member_functions/static.cpp)
-
-add_executable(enum src/enum_class/enum_class.cpp)
-
 add_executable(14 src/14.cpp)
 add_executable(15 src/15.cpp)
 

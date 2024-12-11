@@ -1,4 +1,9 @@
-necati_lessons/lessons/build/
-robotics_demos/serial_cmm/build/
-data_structures/stack/build/
+necati_lessons/lessons/build
 robotics_demos/serial_cmm/build
+data_structures/stack/build
+robotics_demos/serial_cmm/build
+data_structures/sadi_evren_lessons/linked_list/build
+necati_lessons/lessons/src/static_member_functions/build/
+necati_lessons/lessons/src/enum_class/build/
+necati_lessons/lessons/src/memory_allocation/build/
+necati_lessons/lessons/src/special_member_functions/build/

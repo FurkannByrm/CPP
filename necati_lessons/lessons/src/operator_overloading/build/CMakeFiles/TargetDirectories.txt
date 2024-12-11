@@ -1,0 +1,3 @@
+/home/cengo/CPP/necati_lessons/lessons/src/operator_overloading/build/CMakeFiles/mint.dir
+/home/cengo/CPP/necati_lessons/lessons/src/operator_overloading/build/CMakeFiles/edit_cache.dir
+/home/cengo/CPP/necati_lessons/lessons/src/operator_overloading/build/CMakeFiles/rebuild_cache.dir

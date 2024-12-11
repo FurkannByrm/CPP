@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/mint.dir/src/main.cpp.o CMakeFiles/mint.dir/src/mint.cpp.o -o mint 
