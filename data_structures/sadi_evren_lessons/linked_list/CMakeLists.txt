@@ -20,3 +20,6 @@ add_executable(adding_to_list
 add_executable(sorted_insert
     src/sorted_insert.cpp
 )
+add_executable(find_length
+    src/find_length.cpp
+)
