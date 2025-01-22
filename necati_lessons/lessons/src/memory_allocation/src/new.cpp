@@ -9,9 +9,8 @@ struct Node
 
 int main()
 {
-
     Node * ptr = new Node();
-    ptr->x=10;
+    ptr->x=10;    
 
     std::cout<<ptr->x<<std::endl;
 

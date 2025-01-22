@@ -23,3 +23,7 @@ add_executable(sorted_insert
 add_executable(find_length
     src/find_length.cpp
 )
+
+add_executable(reverse_ll
+    src/reverse_ll.cpp
+)

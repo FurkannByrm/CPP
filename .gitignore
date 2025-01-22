@@ -8,3 +8,8 @@ necati_lessons/lessons/src/enum_class/build/
 necati_lessons/lessons/src/memory_allocation/build/
 necati_lessons/lessons/src/special_member_functions/build/
 design_pattern/named_constructor_idiom/build/
+robotics_demos/serial_cmm/daily/build
+robotics_demos/serial_cmm/buffer/build
+robotics_demos/serial_cmm/rp_lidar/build
+robotics_demos/serial_cmm/boost_asio/build
+robotics_demos/serial_cmm/termios_example/build

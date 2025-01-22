@@ -351,7 +351,7 @@ int main ()
    //smart ptr sadece dinamik ömürlü nesnesin hayatını kontrol etmek için.
    // örneğin std::unique_ptr kullanılma nedeni
    //std::unique_ptr nesnesşnin destructor u cağrıldığında std::unique_ptr nin destructor dinamik ömürlü nesneyi delete ediyor.
-   //yani biz fiilen dinamik ömürlü nesneyi delete etmek yerine, biz o nesneyi bir smart pointer nesnesine bağlıyoruz, ve smart
+   //yani biz fiilen dinamik ömürlü nesneyi delete etmek yerine, o nesneyi bir smart pointer nesnesine bağlıyoruz, ve smart
    //pointer nesnesinin ömrü bittiğinde dinamik ömürlü nesne de delete ediliyor.
     }
 */
@@ -476,17 +476,18 @@ int main(){
     Myclass m3 = m2; //syntax hatası işaretledi, copy ctor delete edilmiş.
                     //ama move memberları delete ederse bunlar hiç bildirilmemiş kabul edilir
 
-    Myclass m3 = move(m2);//syntax hatası yok cunku derleyici move member ı yazdı cunku derleyicinin yazdığı move aslında hayata gelen nesnenin
+    Myclass m3 = std::move(m2);//syntax hatası yok cunku derleyici move member ı yazdı cunku derleyicinin yazdığı move aslında hayata gelen nesnenin
     //uptr ogesine diğer nesnenin yani m2 nesnesini uptr sine taşıyor
     //aynı şey atama için degecerli
-    m1 = m2 //syntax hatası çunkü bu delete edilmiş bir fonksiyon
-    m1 = std::move(nm)// taşıma semantiği devreye girecek.
+    m1 = m2; //syntax hatası çunkü bu delete edilmiş bir fonksiyon
+    m1 = std::move(m2)// taşıma semantiği devreye girecek.
     //rule of zero zaten beim istediğim bir şey sınıf aboyle bir veri elemanı koyuyorsak:
     std::unique_ptr<std::string> uptr;
     //bu zaten tipik olarak kopyalanmasını değil taşınmasını istiyorum demektir.
     //taşınmasını istiyorum anlamına gelecek, taşınması için derleyiciin oluşturduğu taşıyan operator fonksiyonu, ve taşıyan kurucu işlev
     //move ctor ve move assigment bunu yapacak.
-    //eğer boyle bir fonksiyon varsa myclass sınıfı copy e kapalı ve taşımaya acıksa bu fonksiyonu cağırmanın tek yolu bu fonksiyona sağ taraf değeri gecmek.
+    //eğer boyle bir fonksiyon varsa myclass sınıfı copy e kapalı ve taşımaya acıksa bu fonksiyonu cağırmanın tek yolu bu fonksiyona 
+    //sağ taraf değeri gecmek.
 
     //kopyalamaya karşı kapatılmış
     void func(std::unique_ptr<Point> x);
@@ -498,6 +499,27 @@ int main(){
      std::unique_ptr<Point> uptr{ new Point{1,2,4}};
      func(uptr); //eğer bu fonksiyonu ile cağırısanız bu kopyalama olduğu için syntax hatası olur
      func(std::move(uptr));// bir syntax hatası olmaz cunkü r value göndermiş oluruz.
+     yada void func(std::unique_ptr<Point>& x);
+     yapip referans parametresin l value gecevcegiz
+     func(uptr); legal olur bu sayede
+     Açıklama:
+
+    Lvalue Referans Geçişi:
+        func(std::unique_ptr<Point>& x) bir unique_ptr'yi referans yoluyla alır.
+        Bu nedenle, fonksiyonun içinde unique_ptr üzerinde herhangi bir işlem yapabilirsiniz (örneğin, işaret edilen nesneyi değiştirmek).
+
+    Sahiplik Transferi Olmaz:
+        uptr hala nesnenin sahibidir. func sadece bu unique_ptr'ye bir referans üzerinden erişir ve üzerinde işlem yapabilir.
+        Sahiplik transferi olmadığı için uptr geçerliliğini korur.
+
+    Bellek Yönetimi:
+        uptr hala aynı kaynağı işaret eder ve fonksiyondan sonra kaynağı yönetmeye devam eder.
+
+Önemli Noktalar:
+
+    func(std::unique_ptr<Point>& x) kullanımı, unique_ptr'nin yönetim modeliyle çelişmez. Çünkü kaynak transferi yerine, sadece referans yoluyla geçiş yapılır.
+    Bu yaklaşım, bir unique_ptr'yi taşımak istemediğiniz ama üzerinde işlem yapmak istediğiniz durumlar için uygundur.
+
 
     }
 
