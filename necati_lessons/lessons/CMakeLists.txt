@@ -19,6 +19,8 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(14 src/14.cpp)
 add_executable(15 src/15.cpp)
+add_executable(main src/main.cpp)
+
 
 
 # Eğer ileride kütüphaneler linklemen gerekirse:

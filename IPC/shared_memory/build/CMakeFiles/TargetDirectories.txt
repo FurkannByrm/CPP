@@ -1,0 +1,4 @@
+/home/cengo/CPP/IPC/shared_memory/build/CMakeFiles/shared.dir
+/home/cengo/CPP/IPC/shared_memory/build/CMakeFiles/access.dir
+/home/cengo/CPP/IPC/shared_memory/build/CMakeFiles/edit_cache.dir
+/home/cengo/CPP/IPC/shared_memory/build/CMakeFiles/rebuild_cache.dir

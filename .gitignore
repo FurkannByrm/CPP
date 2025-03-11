@@ -13,3 +13,5 @@ robotics_demos/serial_cmm/buffer/build
 robotics_demos/serial_cmm/rp_lidar/build
 robotics_demos/serial_cmm/boost_asio/build
 robotics_demos/serial_cmm/termios_example/build
+Algorithms/searching_algorithms/build
+data_structures/queue/build/
