@@ -15,3 +15,7 @@ robotics_demos/serial_cmm/boost_asio/build
 robotics_demos/serial_cmm/termios_example/build
 Algorithms/searching_algorithms/build
 data_structures/queue/build/
+data_structures/array/build/
+STL/map/build/
+multithreading/code_01_overview/build/
+multithreading/code_02_synchronization/build/

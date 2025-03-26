@@ -32,6 +32,8 @@ add_executable(minimum_sorted
     src/minimum_sorted_array.cpp
 )
 
+add_executable(test0 src/test0.cpp)
+
 # Eğer ileride kütüphaneler linklemen gerekirse:
 # target_link_libraries(rearrange_naive_executable <kütüphane_ismi>)
 # target_link_libraries(other_main_executable <kütüphane_ismi>)
