@@ -93,7 +93,10 @@
         "valarray": "cpp",
         "variant": "cpp",
         "strstream": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "core": "cpp",
+        "*.inc": "cpp",
+        "*.txx": "cpp"
     },
     "cmake.sourceDirectory": "/home/cengo/CPP/data_structures/array"
 }
