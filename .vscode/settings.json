@@ -98,5 +98,11 @@
         "*.inc": "cpp",
         "*.txx": "cpp"
     },
-    "cmake.sourceDirectory": "/home/cengo/CPP/data_structures/array"
+    "cmake.sourceDirectory": "/home/cengo/CPP/data_structures/array",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
 }
