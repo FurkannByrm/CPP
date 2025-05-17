@@ -1,0 +1,17 @@
+2025-05-12 09:15:32 [INFO] Connection established from 192.168.1.10
+2025-05-12 09:17:45 [ERROR] Failed to connect to database from 192.168.1.11
+    at db_connector.cpp:87
+    Connection refused (ECONNREFUSED)
+2025-05-12 09:18:01 [INFO] Connection established from 10.0.0.5
+2025-05-12 09:19:22 [WARNING] High memory usage detected (88%) on host 10.0.0.12
+2025-05-12 09:20:55 [ERROR] Timeout while connecting to service from 172.16.0.3
+    Request took longer than 5000ms
+    Check firewall or network cable
+2025-05-12 09:21:10 [INFO] User login from 192.168.0.100
+2025-05-12 09:23:14 [ERROR] Invalid credentials from 192.168.1.15
+    Username: admin
+    Attempt count: 5
+2025-05-12 09:25:00 [INFO] Scheduled backup completed from 10.0.0.7
+2025-05-12 09:30:42 [ERROR] SMTP error from 10.10.10.10
+    Unable to resolve mail server
+    Please check DNS configuration
